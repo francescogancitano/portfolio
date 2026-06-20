@@ -51,7 +51,7 @@ export default function About() {
               <div className="border-l-4 border-yellow-400 pl-4">
                 <h2 className="text-2xl md:text-3xl font-bold uppercase mb-4 tracking-wider">IL MIO PERCORSO</h2>
                 <p className="font-mono text-xs md:text-sm leading-relaxed">
-                  Sono uno sviluppatore full stack appassionato di creare esperienze digitali straordinarie. La mia missione è trasformare idee complesse in soluzioni web eleganti, performanti e user-friendly. Specializzato in React, Node.js e design moderno, combino competenze tecniche con una forte attenzione al design e all'esperienza utente.
+                  Sono uno studente dell'IIS VeronaTrento di Messina, e sono ancora all'ultimo anno di questo percorso, dove ho imparato diverse cose sulla programmazione, dove non imparo solo il rapporto uomo macchina, ma il rapporto stesso tra le persone 
                 </p>
               </div>
 
@@ -59,7 +59,7 @@ export default function About() {
               <div className="border-l-4 border-black pl-4">
                 <h2 className="text-2xl md:text-3xl font-bold uppercase mb-4 tracking-wider">PERCHÉ FACCIO QUESTO</h2>
                 <p className="font-mono text-xs md:text-sm leading-relaxed">
-                  Credo che il codice pulito e le animazioni fluide siano essenziali per creare prodotti che lasciano un'impressione. Quando non sto codificando, amo esplorare le ultime tendenze nel web design, contribuire a progetti open source e imparare nuove tecnologie. Sono sempre entusiasta di collaborare con team creative e di affrontare sfide che spingono i miei limiti.
+                  Non è solo una passione o un obby quello che faccio, è esperienza duro lavoro. E' lo sporcarsi le mani giornalmente per ampliare le proprie conoscense. Tra l'uomo e la macchina c'è solo un piccolo spazio uno spazio descritto in righe che vedo come poesia
                 </p>
               </div>
 

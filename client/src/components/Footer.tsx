@@ -58,13 +58,13 @@ export default function Footer() {
             </h4>
             <div className="space-y-3 font-mono text-xs md:text-sm">
               <div>
-                <a href="tel:+391234567890" className="hover:bg-white hover:text-black px-2 py-1 transition-all duration-150 inline-block">
-                  +39 123 456 7890
+                <a href="tel:+393476102803" className="hover:bg-white hover:text-black px-2 py-1 transition-all duration-150 inline-block">
+                  +39 347 610 2803
                 </a>
               </div>
               <div>
-                <a href="mailto:info@portfolio.com" className="hover:bg-white hover:text-black px-2 py-1 transition-all duration-150 inline-block">
-                  info@portfolio.com
+                <a href="mailto:francescogancitano411@gmail.com" className="hover:bg-white hover:text-black px-2 py-1 transition-all duration-150 inline-block">
+                  francescogancitano411@gmail.com
                 </a>
               </div>
               <div>

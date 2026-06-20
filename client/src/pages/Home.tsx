@@ -17,6 +17,8 @@ interface Experience {
   period: string;
   description: string;
   images: string[];
+  link?: string;
+  linkLabel?: string;
 }
 
 interface Certificate {
@@ -30,26 +32,40 @@ interface Certificate {
 const experiences: Experience[] = [
   {
     id: 1,
-    title: 'Senior Frontend Developer',
-    company: 'Tech Company XYZ',
-    period: '2022 - Presente',
-    description: 'Sviluppo di applicazioni React complesse con architettura scalabile. Implementazione di animazioni avanzate e ottimizzazione delle performance. Collaborazione con team di design e backend per creare esperienze utente eccezionali.',
+    title: 'Nao Challenge 2026',
+    company: 'Scuola di robotica',
+    period: 'dec 2025 - giu 2026',
+    description: 'La mia scuola ogni anno partecipa alla gara di robotica Nao Challenge, dove ci danno un obiettivo da raggiungere e da presentare, e un hackaton con una sfida data sul momento. Quest\'anno la sfida era sul teatro e sono riuscito a portare la mia squadra al secondo posto nella categoria "Super Team".',
     images: [
       'https://d2xsxph8kpxj0f.cloudfront.net/310519663504546332/RyNMHP2DGyk5PzudxuDgU4/hero-aurora-background-WxyLYNTF48KY6KrnPrpkdr.webp',
       'https://d2xsxph8kpxj0f.cloudfront.net/310519663504546332/RyNMHP2DGyk5PzudxuDgU4/abstract-aurora-pattern-5Vgh3D9N6R2XXB8VdAowrg.webp',
     ],
+    link: 'https://www.facebook.com/IisVeronaTrento/posts/il-team-etabeta-delliis-verona-trento-alla-nao-challenge-2026gli-studenti-del-te/1679728970404957/',
+    linkLabel: 'Vedi il post su Facebook'
   },
   {
     id: 2,
-    title: 'Full Stack Developer',
-    company: 'Startup Innovativa',
-    period: '2020 - 2022',
-    description: 'Creazione di piattaforme web da zero utilizzando React e Node.js. Gestione del database e implementazione di API REST. Ottimizzazione SEO e performance.',
+    title: 'Linux Day',
+    company: 'Verona Trento',
+    period: '24 ott 2025',
+    description: 'Ho voluto fare da relatore al Linux Day del Verona Trento, una giornata dedicata al software libero. Ho voluto parlare di un tema molto più delicato, ovvero la dipendenza dall\'intelligenza artificiale, un problema di cui nessuno parla ma che tutti quanti conoscono, facendo riferimento anche a uno studio del MIT che spiega le attività cerebrali delle persone durante l\'utilizzo dell\'AI.',
     images: [
       'https://d2xsxph8kpxj0f.cloudfront.net/310519663504546332/RyNMHP2DGyk5PzudxuDgU4/abstract-aurora-pattern-5Vgh3D9N6R2XXB8VdAowrg.webp',
       'https://d2xsxph8kpxj0f.cloudfront.net/310519663504546332/RyNMHP2DGyk5PzudxuDgU4/hero-aurora-background-WxyLYNTF48KY6KrnPrpkdr.webp',
     ],
+    link: 'https://www.instagram.com/p/DQJVJ0-jbWC/',
+    linkLabel: 'Vedi il post su Instagram'
   },
+  {
+    id: 3,
+    title: 'Mediterranean DevFest',
+    company: 'GDG Nebrodi',
+    period: 'dec 2025',
+    description: 'In questa sfida proposta dal gruppo di sviluppatori Google (i GDG Nebrodi), l\'obiettivo era presentare un\'idea innovativa per salvaguardare l\'ambiente delle montagne dei Nebrodi. Io e i miei compagni abbiamo pensato a un\'applicazione da poter utilizzare per la tutela dell\'ambiente, con mappe offline in caso di smarrimento e altro. Siamo arrivati al quarto posto.',
+    images: [],
+    link: 'https://gdg.community.dev/events/details/google-gdg-nebrodi-presents-devfest-mediterranean-2025-1/',
+    linkLabel: 'Scopri i dettagli del DevFest'
+  }
 ];
 
 const certificates: Certificate[] = [
@@ -126,9 +142,9 @@ export default function Home() {
   };
 
   const contactInfo = [
-    { icon: Phone, label: 'Telefono', value: '+39 123 456 7890', href: 'tel:+391234567890' },
-    { icon: Mail, label: 'Email', value: 'info@portfolio.com', href: 'mailto:info@portfolio.com' },
-    { icon: MapPin, label: 'Ubicazione', value: 'Italia', href: '#' },
+    { icon: Phone, label: 'Telefono', value: '+39 347 610 2803', href: 'tel:+39 347 610 2803' },
+    { icon: Mail, label: 'Email', value: 'francescogancitano411@gmail.com', href: 'mailto:francescogancitano411@gmail.com' },
+    { icon: MapPin, label: 'Ubicazione', value: 'Messina, Sicilia, Italia', href: '#' },
   ];
 
   return (
@@ -155,20 +171,7 @@ export default function Home() {
               <div className="text-4xl md:text-6xl font-bold uppercase leading-tight tracking-tighter mt-2 text-yellow-400">
                 DIGITALI
               </div>
-              <motion.button
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                onClick={() => {
-                  const element = document.querySelector('#contact');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-                className="brutalist-button border-yellow-400 border-2 bg-yellow-400 text-black hover:bg-black hover:text-yellow-400 text-sm md:text-base px-8 md:px-12 mt-6"
-              >
-                CONTATTAMI
-              </motion.button>
+              
             </motion.div>
 
             <motion.div
@@ -180,7 +183,7 @@ export default function Home() {
             >
               <div className="border-l-4 border-black pl-4">
                 <p className="font-mono text-xs md:text-sm leading-relaxed">
-                  Full Stack Developer specializzato in React, Node.js e design moderno. Trasformo idee complesse in soluzioni web eleganti, performanti e user-friendly. Ogni progetto è un'opportunità per creare qualcosa di straordinario.
+                  Studente specializzato nella programmazione e nell'architettura dei software, trasformo sogni e idee in dati e righe di codice
                 </p>
               </div>
 
@@ -216,9 +219,9 @@ export default function Home() {
 
           <div className="space-y-4 md:space-y-0 md:grid md:grid-cols-3 md:gap-6 mb-8">
             {[
-              { title: 'SVILUPPO WEB', desc: 'React, Vue, Next.js - Applicazioni moderne e scalabili', borderColor: 'border-cyan-500', titleColor: 'text-cyan-600' },
-              { title: 'BACKEND', desc: 'Node.js, Express, Databases - API robuste e performanti', borderColor: 'border-purple-500', titleColor: 'text-purple-600' },
-              { title: 'DESIGN', desc: 'UI/UX moderno - Interfacce intuitive e belle', borderColor: 'border-pink-500', titleColor: 'text-pink-600' },
+              { title: 'IDEE', desc: 'per contattarmi non hai bisogno di un\'idea, se hai un problema sono la prima persona da chiamare per risolverlo', borderColor: 'border-cyan-500', titleColor: 'text-cyan-600' },
+              { title: 'CONOSCENZE', desc: 'Ho tantissime esperienze come programmatore ma soprattutto come sviluppatore, perchè prima sono un sognatore e poi sono un programmatore', borderColor: 'border-purple-500', titleColor: 'text-purple-600' },
+              { title: 'FUTURO', desc: 'prometto soluzioni innovative, solizioni alternative, cucite appositamente per le tue necessità ', borderColor: 'border-pink-500', titleColor: 'text-pink-600' },
             ].map((feature, idx) => (
               <motion.div
                 key={idx}
@@ -296,21 +299,21 @@ export default function Home() {
               <div className="border-l-4 border-yellow-400 pl-4">
                 <h2 className="text-2xl md:text-3xl font-bold uppercase mb-4 tracking-wider">IL MIO PERCORSO</h2>
                 <p className="font-mono text-xs md:text-sm leading-relaxed">
-                  Sono uno sviluppatore full stack appassionato di creare esperienze digitali straordinarie. La mia missione è trasformare idee complesse in soluzioni web eleganti, performanti e user-friendly. Specializzato in React, Node.js e design moderno, combino competenze tecniche con una forte attenzione al design e all'esperienza utente.
+                  Sono uno studente dell'IIS VeronaTrento di Messina, e sono ancora all'ultimo anno di questo percorso, dove ho imparato diverse cose sulla programmazione, dove non imparo solo il rapporto uomo macchina, ma il rapporto stesso tra le persone 
                 </p>
               </div>
 
               <div className="border-l-4 border-black pl-4">
                 <h2 className="text-2xl md:text-3xl font-bold uppercase mb-4 tracking-wider">PERCHÉ FACCIO QUESTO</h2>
                 <p className="font-mono text-xs md:text-sm leading-relaxed">
-                  Credo che il codice pulito e le animazioni fluide siano essenziali per creare prodotti che lasciano un'impressione. Quando non sto codificando, amo esplorare le ultime tendenze nel web design, contribuire a progetti open source e imparare nuove tecnologie. Sono sempre entusiasta di collaborare con team creative e di affrontare sfide che spingono i miei limiti.
+                  Non è solo una passione o un obby quello che faccio, è esperienza, duro lavoro. E' lo sporcarsi le mani giornalmente per ampliare le proprie conoscense. Tra l'uomo e la macchina c'è solo un piccolo spazio uno spazio descritto in righe che vedo come poesia
                 </p>
               </div>
 
               <div className="border-2 border-black p-4 md:p-6">
                 <h3 className="text-xl md:text-2xl font-bold uppercase mb-4 tracking-wider">COMPETENZE PRINCIPALI</h3>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3 font-mono text-xs">
-                  {['React', 'Node.js', 'TypeScript', 'Tailwind CSS', 'Next.js', 'Express', 'MongoDB', 'PostgreSQL', 'Git', 'Docker', 'AWS', 'UI/UX Design'].map((skill, idx) => (
+                  {['Python', 'Javascript', 'HTML', 'CSS', 'SQL', 'C', 'C++', 'C#', 'Java', 'Flutter', 'Dart', 'Git', 'Docker', 'Linux'].map((skill, idx) => (
                     <div key={idx} className="border-2 border-black p-2 hover:bg-black hover:text-white transition-all duration-150 text-center">
                       {skill}
                     </div>
@@ -370,41 +373,57 @@ export default function Home() {
               viewport={{ once: true }}
               className="md:col-span-2 space-y-6"
             >
-              <div className="border-l-4 border-yellow-400 pl-4">
+              <div className="border-l-4 border-yellow-400 pl-4 space-y-3">
                 <p className="font-mono text-xs md:text-sm leading-relaxed">{exp.description}</p>
+                {exp.link && (
+                  <div className="pt-1">
+                    <a
+                      href={exp.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold uppercase tracking-wider border-2 border-black bg-white text-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none hover:bg-black hover:text-white transition-all duration-100 cursor-pointer font-mono"
+                    >
+                      {exp.linkLabel || 'SCOPRI DI PIÙ'} ↗
+                    </a>
+                  </div>
+                )}
               </div>
 
               <div className="space-y-4">
-                <div className="border-4 border-black aspect-video bg-gray-100 flex items-center justify-center overflow-hidden">
-                  <motion.img
-                    key={currentImageIdx}
-                    src={currentImage}
-                    alt="Experience"
-                    className="w-full h-full object-cover"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                </div>
-
-                {exp.images.length > 1 && (
-                  <div className="flex items-center justify-between">
-                    <button
-                      onClick={prevImage}
-                      className="brutalist-button p-2 md:p-3"
-                    >
-                      <ChevronLeft size={20} />
-                    </button>
-                    <div className="font-mono text-xs">
-                      {currentImageIdx + 1} / {exp.images.length}
+                {exp.images && exp.images.length > 0 && (
+                  <>
+                    <div className="border-4 border-black aspect-video bg-gray-100 flex items-center justify-center overflow-hidden">
+                      <motion.img
+                        key={currentImageIdx}
+                        src={currentImage}
+                        alt="Experience"
+                        className="w-full h-full object-cover"
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.3 }}
+                      />
                     </div>
-                    <button
-                      onClick={nextImage}
-                      className="brutalist-button p-2 md:p-3"
-                    >
-                      <ChevronRight size={20} />
-                    </button>
-                  </div>
+
+                    {exp.images.length > 1 && (
+                      <div className="flex items-center justify-between">
+                        <button
+                          onClick={prevImage}
+                          className="brutalist-button p-2 md:p-3"
+                        >
+                          <ChevronLeft size={20} />
+                        </button>
+                        <div className="font-mono text-xs">
+                          {currentImageIdx + 1} / {exp.images.length}
+                        </div>
+                        <button
+                          onClick={nextImage}
+                          className="brutalist-button p-2 md:p-3"
+                        >
+                          <ChevronRight size={20} />
+                        </button>
+                      </div>
+                    )}
+                  </>
                 )}
                 <motion.button
                   initial={{ opacity: 0, y: 20 }}
@@ -417,7 +436,7 @@ export default function Home() {
                       element.scrollIntoView({ behavior: 'smooth' });
                     }
                   }}
-                  className="w-full brutalist-button border-yellow-400 border-2 bg-yellow-400 text-black hover:bg-black hover:text-yellow-400 text-sm md:text-base mt-4"
+                  className="w-full brutalist-button border-yellow-400 border-2 bg-yellow-400 text-black hover:bg-black hover:text-yellow-400 text-sm md:text-base mt-2"
                 >
                   CONTATTAMI
                 </motion.button>
