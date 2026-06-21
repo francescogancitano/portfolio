@@ -87,7 +87,7 @@ const certificates: Certificate[] = [
     id: 1,
     title: 'Attestato Progetto Erasmus+',
     issuer: 'Unione Europea / IIS Verona Trento',
-    date: '2026',
+    date: '16 apr 2026',
     file: '/attestati/attestato_progetto_Erasmus.jpg',
     image: '/attestati/attestato_progetto_Erasmus.jpg',
     isPdf: false,
@@ -95,49 +95,49 @@ const certificates: Certificate[] = [
   },
   {
     id: 2,
-    title: 'Sviluppo Cross-Platform Flutter',
+    title: 'Workshop avanzato di Flutter',
     issuer: 'IIS Verona Trento',
-    date: '2026',
+    date: '17 gen 2026',
     file: '/attestati/Attestato_Flutter_Gancitano_copia.pdf',
     image: '/attestati/Attestato_Flutter_Gancitano_copia.jpg',
     isPdf: true,
-    description: 'Certificato rilasciato dall\'Istituto per il completamento del corso intensivo di programmazione mobile cross-platform con il framework Flutter di Google e il linguaggio Dart.'
+    description: 'Certificato rilasciato dall\'Istituto per aver partecipato al workshop interattivo di Flutter imparando anche strumenti come Firebase.'
   },
   {
     id: 3,
     title: 'Introduction to Cybersecurity',
     issuer: 'Cisco Networking Academy',
-    date: '2025',
+    date: '19 mar 2026',
     file: '/attestati/Introduction_to_Cybersecurity_certificate_francesco-gancitano-veronatrento-it_85404c84-14bd-436b-8a72-b60cc245be4e.pdf',
     image: '/attestati/Introduction_to_Cybersecurity.jpg',
     isPdf: true,
-    description: 'Certificazione Cisco sull\'acquisizione delle competenze fondamentali sul panorama globale della sicurezza informatica, la protezione dei dati, la crittografia e la sicurezza delle reti.'
+    description: 'Certificazione Cisco sulle conoscenze basilari di sicurezza informatica e cryptografia'
   },
   {
     id: 4,
-    title: 'Cybersecurity Essentials',
+    title: 'IT Essentials',
     issuer: 'Cisco Networking Academy',
-    date: '2025',
+    date: '6 giu 2025',
     file: '/attestati/_certificate_francesco-gancitano-veronatrento-it_a0801585-f9e8-4084-ad42-36163b7f61f2.pdf',
     image: '/attestati/Cybersecurity_Essentials.jpg',
     isPdf: true,
-    description: 'Certificato Cisco sulle competenze avanzate di difesa delle infrastrutture informatiche, auditing della sicurezza, tecniche di crittografia e strategie di mitigazione delle minacce.'
+    description: 'Certificato Cisco sulle competenze base dell\'IT, computer, come funzionano, Sistemi operativi, e NetWorking'
   },
   {
     id: 5,
     title: 'Certificato IBM SkillsBuild',
     issuer: 'IBM',
-    date: '2025',
+    date: '29 ott 2025',
     file: '/attestati/Certificato di completamento _ SkillsBuild.pdf',
     image: '/attestati/Certificato_IBM_SkillsBuild.jpg',
     isPdf: true,
-    description: 'Attestato per aver terminato con successo moduli di formazione professionalizzante sulle tecnologie digitali emergenti, project management e logiche agili ospitati da IBM.'
+    description: 'Attestato per aver terminato con successo moduli di formazione professionalizzante sull\'AI da IBM.'
   },
   {
     id: 6,
     title: 'Relatore Linux Day 2025',
     issuer: 'IIS Verona Trento / LUG',
-    date: '2025',
+    date: '2 apr 2026',
     file: '/attestati/attestato di partecipazione linux day.png',
     image: '/attestati/attestato di partecipazione linux day.png',
     isPdf: false,
@@ -147,7 +147,7 @@ const certificates: Certificate[] = [
     id: 7,
     title: 'Apprendisti Ciceroni FAI',
     issuer: 'FAI (Fondo per l\'Ambiente Italiano)',
-    date: '2024',
+    date: '2 apr 2026',
     file: '/attestati/attestato FAI Francesco Gancitano.pdf',
     image: '/attestati/attestato_FAI_Francesco_Gancitano.jpg',
     isPdf: true,
@@ -157,7 +157,7 @@ const certificates: Certificate[] = [
     id: 8,
     title: 'Attestato PON Orientamento',
     issuer: 'IIS Verona Trento',
-    date: '2024',
+    date: '9 mar 2026',
     file: '/attestati/attestato pon orientamento.jpg',
     image: '/attestati/attestato pon orientamento.jpg',
     isPdf: false,
@@ -167,7 +167,7 @@ const certificates: Certificate[] = [
     id: 9,
     title: 'Sud Innovation Summit',
     issuer: 'Sud Innovation',
-    date: '2025',
+    date: '16/17 ott 2025',
     file: '/attestati/sud innovation summit.pdf',
     image: '/attestati/sud_innovation_summit.jpg',
     isPdf: true,
@@ -175,13 +175,13 @@ const certificates: Certificate[] = [
   },
   {
     id: 10,
-    title: 'Attestato Competenze Informatiche',
-    issuer: 'IIS Verona Trento',
-    date: '2025',
+    title: 'Attestato Mediterranean DevFest ',
+    issuer: 'GDG Nebrodi',
+    date: '14 dec 2025',
     file: '/attestati/Attestato_gancitano_francesco.pdf',
     image: '/attestati/Attestato_gancitano_francesco.jpg',
     isPdf: true,
-    description: 'Certificazione didattica rilasciata per attestare le capacità tecnico-informatiche maturate durante lo svolgimento dei progetti scolastici avanzati.'
+    description: 'Attestato di partecipazione alla competizione fra studendi del Mediterranean DevFest a Sant\'Agata di Militello.'
   }
 ];
 
@@ -197,6 +197,7 @@ export default function Home() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
 
   const exp = experiences[selectedExp];
   const currentImage = exp.images[currentImageIdx];
@@ -214,11 +215,61 @@ export default function Home() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    setIsSending(true);
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey || serviceId.includes('il_tuo') || templateId.includes('il_tuo') || publicKey.includes('la_tua')) {
+      console.warn('EmailJS keys are not configured yet in .env file.');
+      // Local fallback for testing
+      console.log('Form submitted (Mock):', formData);
+      setSubmitted(true);
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+      setTimeout(() => setSubmitted(false), 3000);
+      setIsSending(false);
+      return;
+    }
+
+    try {
+      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          service_id: serviceId,
+          template_id: templateId,
+          user_id: publicKey,
+          template_params: {
+            from_name: formData.name,
+            reply_to: formData.email,
+            phone: formData.phone,
+            subject: formData.subject,
+            message: formData.message,
+            to_email: 'francescogancitano411@gmail.com'
+          },
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        const errText = await response.text();
+        console.error('Failed to send email:', errText);
+        alert('Errore nell\'invio dell\'email. Controlla le configurazioni di EmailJS.');
+      }
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      alert('Si è verificato un errore di rete nell\'invio del messaggio.');
+    } finally {
+      setIsSending(false);
+    }
   };
 
   const contactInfo = [
@@ -811,10 +862,11 @@ export default function Home() {
 
                 <button
                   type="submit"
-                  className="w-full bg-yellow-400 text-black font-bold uppercase tracking-wider py-2 md:py-3 border-2 border-yellow-400 hover:bg-black hover:text-yellow-400 transition-all duration-150 flex items-center justify-center gap-2 text-sm md:text-base"
+                  disabled={isSending}
+                  className="w-full bg-yellow-400 text-black font-bold uppercase tracking-wider py-2 md:py-3 border-2 border-yellow-400 hover:bg-black hover:text-yellow-400 transition-all duration-150 flex items-center justify-center gap-2 text-sm md:text-base disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <Send size={20} />
-                  INVIA RICHIESTA
+                  <Send size={20} className={isSending ? "animate-pulse" : ""} />
+                  {isSending ? 'INVIANDO...' : 'INVIA RICHIESTA'}
                 </button>
 
                 {submitted && (
