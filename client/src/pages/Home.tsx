@@ -94,6 +94,7 @@ const certificates: Certificate[] = [
     issuer: 'IIS Verona Trento',
     date: '2026',
     file: '/attestati/Attestato_Flutter_Gancitano_copia.pdf',
+    image: '/attestati/Attestato_Flutter_Gancitano_copia.jpg',
     isPdf: true,
     description: 'Certificato rilasciato dall\'Istituto per il completamento del corso intensivo di programmazione mobile cross-platform con il framework Flutter di Google e il linguaggio Dart.'
   },
@@ -103,6 +104,7 @@ const certificates: Certificate[] = [
     issuer: 'Cisco Networking Academy',
     date: '2025',
     file: '/attestati/Introduction_to_Cybersecurity_certificate_francesco-gancitano-veronatrento-it_85404c84-14bd-436b-8a72-b60cc245be4e.pdf',
+    image: '/attestati/Introduction_to_Cybersecurity.jpg',
     isPdf: true,
     description: 'Certificazione Cisco sull\'acquisizione delle competenze fondamentali sul panorama globale della sicurezza informatica, la protezione dei dati, la crittografia e la sicurezza delle reti.'
   },
@@ -112,6 +114,7 @@ const certificates: Certificate[] = [
     issuer: 'Cisco Networking Academy',
     date: '2025',
     file: '/attestati/_certificate_francesco-gancitano-veronatrento-it_a0801585-f9e8-4084-ad42-36163b7f61f2.pdf',
+    image: '/attestati/Cybersecurity_Essentials.jpg',
     isPdf: true,
     description: 'Certificato Cisco sulle competenze avanzate di difesa delle infrastrutture informatiche, auditing della sicurezza, tecniche di crittografia e strategie di mitigazione delle minacce.'
   },
@@ -121,6 +124,7 @@ const certificates: Certificate[] = [
     issuer: 'IBM',
     date: '2025',
     file: '/attestati/Certificato di completamento _ SkillsBuild.pdf',
+    image: '/attestati/Certificato_IBM_SkillsBuild.jpg',
     isPdf: true,
     description: 'Attestato per aver terminato con successo moduli di formazione professionalizzante sulle tecnologie digitali emergenti, project management e logiche agili ospitati da IBM.'
   },
@@ -140,6 +144,7 @@ const certificates: Certificate[] = [
     issuer: 'FAI (Fondo per l\'Ambiente Italiano)',
     date: '2024',
     file: '/attestati/attestato FAI Francesco Gancitano.pdf',
+    image: '/attestati/attestato_FAI_Francesco_Gancitano.jpg',
     isPdf: true,
     description: 'Attestato per aver partecipato attivamente in qualità di guida studentesca (Cicerone) per illustrare ad un pubblico reale le bellezze artistiche e monumentali tutelate dal FAI.'
   },
@@ -159,6 +164,7 @@ const certificates: Certificate[] = [
     issuer: 'Sud Innovation',
     date: '2025',
     file: '/attestati/sud innovation summit.pdf',
+    image: '/attestati/sud_innovation_summit.jpg',
     isPdf: true,
     description: 'Certificato di presenza al più importante summit sull\'innovazione e startup del Sud Italia, incentrato sulle tendenze future della digital transformation.'
   },
@@ -168,6 +174,7 @@ const certificates: Certificate[] = [
     issuer: 'IIS Verona Trento',
     date: '2025',
     file: '/attestati/Attestato_gancitano_francesco.pdf',
+    image: '/attestati/Attestato_gancitano_francesco.jpg',
     isPdf: true,
     description: 'Certificazione didattica rilasciata per attestare le capacità tecnico-informatiche maturate durante lo svolgimento dei progetti scolastici avanzati.'
   }
