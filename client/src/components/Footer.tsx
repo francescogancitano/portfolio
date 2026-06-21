@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'wouter';
 
 /**
@@ -6,9 +7,10 @@ import { Link } from 'wouter';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const [modalContent, setModalContent] = useState<'privacy' | 'terms' | null>(null);
 
   return (
-    <footer className="bg-black text-white border-t-4 border-white">
+    <footer className="bg-black text-white border-t-4 border-white relative">
       <div className="container mx-auto px-4 py-8 md:py-12">
         {/* Main Grid - Mobile First */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-8 md:mb-12">
@@ -83,15 +85,58 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 font-mono text-xs">
           <p>© {currentYear} PORTFOLIO. ALL RIGHTS RESERVED.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:bg-white hover:text-black px-2 py-1 transition-all duration-150">
+            <button
+              onClick={() => setModalContent('privacy')}
+              className="hover:bg-white hover:text-black px-2 py-1 transition-all duration-150 cursor-pointer"
+            >
               PRIVACY
-            </a>
-            <a href="#" className="hover:bg-white hover:text-black px-2 py-1 transition-all duration-150">
+            </button>
+            <button
+              onClick={() => setModalContent('terms')}
+              className="hover:bg-white hover:text-black px-2 py-1 transition-all duration-150 cursor-pointer"
+            >
               TERMS
-            </a>
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Custom Neo-Brutalist Modal Overlay */}
+      {modalContent && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-xs">
+          <div className="border-4 border-black bg-white text-black p-6 md:p-8 max-w-md w-full relative shadow-[6px_6px_0px_rgba(0,0,0,1)]">
+            {/* Close Button */}
+            <button
+              onClick={() => setModalContent(null)}
+              className="absolute top-4 right-4 border-2 border-black bg-yellow-400 text-black px-2 py-1 font-bold text-xs hover:bg-black hover:text-yellow-400 transition-all duration-100 cursor-pointer font-mono"
+            >
+              [X] CHIUDI
+            </button>
+
+            {/* Modal Title */}
+            <h3 className="text-xl font-bold uppercase mb-4 border-b-2 border-black pb-2 tracking-wider">
+              {modalContent === 'privacy' ? 'Informativa Privacy' : 'Termini di Servizio'}
+            </h3>
+
+            {/* Modal Body */}
+            <p className="font-mono text-xs md:text-sm leading-relaxed mb-6">
+              {modalContent === 'privacy' ? (
+                "Questo sito web è un portfolio personale. Non raccoglie, non memorizza e non tratta alcun tipo di dato personale o cookie di profilazione degli utenti. I dati inseriti nel modulo di contatto (nome, email, telefono, messaggio) vengono utilizzati esclusivamente per rispondere alle richieste tramite EmailJS e non vengono salvati in alcun database."
+              ) : (
+                "L'uso di questo sito è gratuito e a scopo puramente informativo e di portfolio. Tutti i contenuti, i progetti, le grafiche e i certificati mostrati appartengono a Francesco Gancitano o ai rispettivi titolari dei diritti. Non è consentito l'uso commerciale o la riproduzione non autorizzata dei materiali presenti su questo sito."
+              )}
+            </p>
+
+            {/* Accept/Confirm Button */}
+            <button
+              onClick={() => setModalContent(null)}
+              className="w-full bg-yellow-400 hover:bg-black hover:text-yellow-400 border-2 border-black text-black font-bold uppercase tracking-wider py-2 transition-all duration-150 cursor-pointer text-xs md:text-sm text-center"
+            >
+              Ho capito
+            </button>
+          </div>
+        </div>
+      )}
     </footer>
   );
 }
