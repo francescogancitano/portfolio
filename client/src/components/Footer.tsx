@@ -18,7 +18,7 @@ export default function Footer() {
             <p className="font-mono text-xs md:text-sm leading-relaxed">
               Full Stack Developer. <br />
               Building digital experiences <br />
-              with code and creativity.
+              with code and love.
             </p>
           </div>
 

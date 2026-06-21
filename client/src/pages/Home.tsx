@@ -1,9 +1,15 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Mail, Phone, MapPin, Send, Download } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Mail, Phone, MapPin, Send, Download, FileText, ExternalLink } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 /**
  * Home Page - Single Scroll Experience
@@ -26,7 +32,10 @@ interface Certificate {
   title: string;
   issuer: string;
   date: string;
-  image: string;
+  file: string;
+  image?: string;
+  isPdf: boolean;
+  description: string;
 }
 
 const experiences: Experience[] = [
@@ -71,43 +80,102 @@ const experiences: Experience[] = [
 const certificates: Certificate[] = [
   {
     id: 1,
-    title: 'React Advanced Patterns',
-    issuer: 'Udemy',
-    date: '2023',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504546332/RyNMHP2DGyk5PzudxuDgU4/abstract-aurora-pattern-5Vgh3D9N6R2XXB8VdAowrg.webp',
+    title: 'Attestato Progetto Erasmus+',
+    issuer: 'Unione Europea / IIS Verona Trento',
+    date: '2026',
+    file: '/attestati/attestato_progetto_Erasmus.jpg',
+    image: '/attestati/attestato_progetto_Erasmus.jpg',
+    isPdf: false,
+    description: 'Certificato di partecipazione al progetto di mobilità europea Erasmus+, focalizzato sullo sviluppo di competenze linguistiche, relazionali e professionali in contesti interculturali.'
   },
   {
     id: 2,
-    title: 'Full Stack Web Development',
-    issuer: 'Coursera',
-    date: '2023',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504546332/RyNMHP2DGyk5PzudxuDgU4/hero-aurora-background-WxyLYNTF48KY6KrnPrpkdr.webp',
+    title: 'Sviluppo Cross-Platform Flutter',
+    issuer: 'IIS Verona Trento',
+    date: '2026',
+    file: '/attestati/Attestato_Flutter_Gancitano_copia.pdf',
+    isPdf: true,
+    description: 'Certificato rilasciato dall\'Istituto per il completamento del corso intensivo di programmazione mobile cross-platform con il framework Flutter di Google e il linguaggio Dart.'
   },
   {
     id: 3,
-    title: 'TypeScript Mastery',
-    issuer: 'Pluralsight',
-    date: '2022',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504546332/RyNMHP2DGyk5PzudxuDgU4/abstract-aurora-pattern-5Vgh3D9N6R2XXB8VdAowrg.webp',
+    title: 'Introduction to Cybersecurity',
+    issuer: 'Cisco Networking Academy',
+    date: '2025',
+    file: '/attestati/Introduction_to_Cybersecurity_certificate_francesco-gancitano-veronatrento-it_85404c84-14bd-436b-8a72-b60cc245be4e.pdf',
+    isPdf: true,
+    description: 'Certificazione Cisco sull\'acquisizione delle competenze fondamentali sul panorama globale della sicurezza informatica, la protezione dei dati, la crittografia e la sicurezza delle reti.'
   },
   {
     id: 4,
-    title: 'Node.js Complete Guide',
-    issuer: 'Udemy',
-    date: '2022',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504546332/RyNMHP2DGyk5PzudxuDgU4/hero-aurora-background-WxyLYNTF48KY6KrnPrpkdr.webp',
+    title: 'Cybersecurity Essentials',
+    issuer: 'Cisco Networking Academy',
+    date: '2025',
+    file: '/attestati/_certificate_francesco-gancitano-veronatrento-it_a0801585-f9e8-4084-ad42-36163b7f61f2.pdf',
+    isPdf: true,
+    description: 'Certificato Cisco sulle competenze avanzate di difesa delle infrastrutture informatiche, auditing della sicurezza, tecniche di crittografia e strategie di mitigazione delle minacce.'
   },
   {
     id: 5,
-    title: 'Web Design Fundamentals',
-    issuer: 'LinkedIn Learning',
-    date: '2021',
-    image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663504546332/RyNMHP2DGyk5PzudxuDgU4/abstract-aurora-pattern-5Vgh3D9N6R2XXB8VdAowrg.webp',
+    title: 'Certificato IBM SkillsBuild',
+    issuer: 'IBM',
+    date: '2025',
+    file: '/attestati/Certificato di completamento _ SkillsBuild.pdf',
+    isPdf: true,
+    description: 'Attestato per aver terminato con successo moduli di formazione professionalizzante sulle tecnologie digitali emergenti, project management e logiche agili ospitati da IBM.'
   },
+  {
+    id: 6,
+    title: 'Relatore Linux Day 2025',
+    issuer: 'IIS Verona Trento / LUG',
+    date: '2025',
+    file: '/attestati/attestato di partecipazione linux day.png',
+    image: '/attestati/attestato di partecipazione linux day.png',
+    isPdf: false,
+    description: 'Certificato di partecipazione in veste di relatore alle conferenze del Linux Day 2025, in cui ho tenuto un talk riguardante gli impatti cerebrali dell\'abuso di intelligenza artificiale.'
+  },
+  {
+    id: 7,
+    title: 'Apprendisti Ciceroni FAI',
+    issuer: 'FAI (Fondo per l\'Ambiente Italiano)',
+    date: '2024',
+    file: '/attestati/attestato FAI Francesco Gancitano.pdf',
+    isPdf: true,
+    description: 'Attestato per aver partecipato attivamente in qualità di guida studentesca (Cicerone) per illustrare ad un pubblico reale le bellezze artistiche e monumentali tutelate dal FAI.'
+  },
+  {
+    id: 8,
+    title: 'Attestato PON Orientamento',
+    issuer: 'IIS Verona Trento',
+    date: '2024',
+    file: '/attestati/attestato pon orientamento.jpg',
+    image: '/attestati/attestato pon orientamento.jpg',
+    isPdf: false,
+    description: 'Attestato scolastico per lo sviluppo di competenze trasversali e orientamento formativo/professionale finalizzato all\'analisi delle scelte lavorative future.'
+  },
+  {
+    id: 9,
+    title: 'Sud Innovation Summit',
+    issuer: 'Sud Innovation',
+    date: '2025',
+    file: '/attestati/sud innovation summit.pdf',
+    isPdf: true,
+    description: 'Certificato di presenza al più importante summit sull\'innovazione e startup del Sud Italia, incentrato sulle tendenze future della digital transformation.'
+  },
+  {
+    id: 10,
+    title: 'Attestato Competenze Informatiche',
+    issuer: 'IIS Verona Trento',
+    date: '2025',
+    file: '/attestati/Attestato_gancitano_francesco.pdf',
+    isPdf: true,
+    description: 'Certificazione didattica rilasciata per attestare le capacità tecnico-informatiche maturate durante lo svolgimento dei progetti scolastici avanzati.'
+  }
 ];
 
 export default function Home() {
   const [selectedExp, setSelectedExp] = useState(0);
+  const [selectedCert, setSelectedCert] = useState<Certificate | null>(null);
   const [currentImageIdx, setCurrentImageIdx] = useState(0);
   const [formData, setFormData] = useState({
     name: '',
@@ -467,22 +535,128 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.05 * idx }}
                 viewport={{ once: true }}
+                onClick={() => setSelectedCert(cert)}
                 className={`brutalist-card group cursor-pointer hover:bg-black hover:text-white transition-all duration-150 ${
                   idx === 1 ? 'md:col-span-2 lg:col-span-1' : ''
                 } ${idx === 3 ? 'md:col-start-2 lg:col-start-auto' : ''}`}
                 style={{ transform: `rotate(${(idx % 2 === 0 ? 1 : -1) * 1.5}deg)` }}
               >
-                <img
-                  src={cert.image}
-                  alt={cert.title}
-                  className="w-full h-32 md:h-40 object-cover border-2 border-black mb-4 group-hover:border-white"
-                />
+                {cert.image ? (
+                  <img
+                    src={cert.image}
+                    alt={cert.title}
+                    className="w-full h-32 md:h-40 object-cover border-2 border-black mb-4 group-hover:border-white"
+                  />
+                ) : (
+                  <div className={`w-full h-32 md:h-40 border-2 border-black mb-4 flex flex-col justify-between p-3 font-mono text-black group-hover:border-white select-none ${
+                    cert.issuer.includes('Cisco') ? 'bg-[#00D9FF]' :
+                    cert.issuer.includes('IBM') ? 'bg-[#FF1493]' :
+                    cert.issuer.includes('Sud') ? 'bg-[#FFD700]' :
+                    cert.issuer.includes('FAI') ? 'bg-[#FF6B00]' :
+                    'bg-[#9D00FF] text-white'
+                  }`}>
+                    <div className="flex justify-between items-start">
+                      <FileText size={20} className="stroke-[2.5]" />
+                      <span className="text-[9px] font-bold border border-black bg-white text-black px-1.5 py-0.5 shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] uppercase">
+                        PDF DOC
+                      </span>
+                    </div>
+                    <div className="space-y-1">
+                      <div className="text-[9px] uppercase font-bold tracking-wider opacity-70">
+                        {cert.issuer}
+                      </div>
+                      <div className="text-xs uppercase font-extrabold tracking-tight line-clamp-2 leading-none">
+                        {cert.title}
+                      </div>
+                    </div>
+                  </div>
+                )}
                 <h3 className="font-bold uppercase tracking-wider text-xs md:text-sm mb-2">{cert.title}</h3>
                 <p className="font-mono text-xs mb-1">{cert.issuer}</p>
                 <p className="font-mono text-xs opacity-70">{cert.date}</p>
               </motion.div>
             ))}
           </div>
+
+          {/* CERTIFICATE DETAIL DIALOG */}
+          <Dialog open={selectedCert !== null} onOpenChange={(open) => !open && setSelectedCert(null)}>
+            <DialogContent className="border-4 border-black bg-white p-6 max-w-lg w-[90vw] md:w-full rounded-none shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] gap-0">
+              {selectedCert && (
+                <div className="space-y-4 font-mono text-black">
+                  {/* Header */}
+                  <div className="border-b-2 border-black pb-3">
+                    <div className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">
+                      {selectedCert.issuer} — {selectedCert.date}
+                    </div>
+                    <DialogTitle className="text-xl md:text-2xl font-bold uppercase tracking-tight mt-1 leading-tight text-black font-display">
+                      {selectedCert.title}
+                    </DialogTitle>
+                  </div>
+
+                  {/* Cover Preview */}
+                  <div className="border-2 border-black bg-gray-100 overflow-hidden flex items-center justify-center relative">
+                    {selectedCert.image ? (
+                      <img
+                        src={selectedCert.image}
+                        alt={selectedCert.title}
+                        className="w-full h-auto max-h-64 object-contain"
+                      />
+                    ) : (
+                      <div className={`w-full h-48 flex flex-col justify-between p-4 ${
+                        selectedCert.issuer.includes('Cisco') ? 'bg-[#00D9FF]' :
+                        selectedCert.issuer.includes('IBM') ? 'bg-[#FF1493]' :
+                        selectedCert.issuer.includes('Sud') ? 'bg-[#FFD700]' :
+                        selectedCert.issuer.includes('FAI') ? 'bg-[#FF6B00]' :
+                        'bg-[#9D00FF] text-white'
+                      }`}>
+                        <div className="flex justify-between items-start">
+                          <FileText size={36} className="stroke-[2.5]" />
+                          <span className="text-xs font-bold border border-black bg-white text-black px-2 py-0.5 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] uppercase">
+                            DOCUMENTO PDF
+                          </span>
+                        </div>
+                        <div className="space-y-2">
+                          <div className="text-xs uppercase font-bold tracking-widest opacity-80">
+                            {selectedCert.issuer}
+                          </div>
+                          <div className="text-lg uppercase font-extrabold tracking-tight leading-tight">
+                            {selectedCert.title}
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Description */}
+                  <div className="space-y-2">
+                    <h4 className="text-xs font-bold uppercase tracking-widest text-gray-500">Descrizione dell'attestato:</h4>
+                    <p className="text-xs md:text-sm leading-relaxed text-gray-800">
+                      {selectedCert.description}
+                    </p>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="pt-2 flex flex-col sm:flex-row gap-3">
+                    <a
+                      href={selectedCert.file}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 brutalist-button flex items-center justify-center gap-2 text-center text-xs md:text-sm"
+                    >
+                      <ExternalLink size={18} />
+                      APRI CERTIFICATO
+                    </a>
+                    <button
+                      onClick={() => setSelectedCert(null)}
+                      className="flex-1 px-4 py-2 border-2 border-black bg-gray-100 text-black font-bold text-xs md:text-sm hover:bg-black hover:text-white transition-all duration-100 cursor-pointer text-center"
+                    >
+                      CHIUDI
+                    </button>
+                  </div>
+                </div>
+              )}
+            </DialogContent>
+          </Dialog>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
