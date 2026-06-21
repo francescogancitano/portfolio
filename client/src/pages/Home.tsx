@@ -732,10 +732,14 @@ export default function Home() {
             <p className="font-mono text-xs md:text-sm mb-6 max-w-md mx-auto">
               Ottieni una copia completa del mio Curriculum Vitae Europeo con tutte le mie esperienze, competenze e certificazioni.
             </p>
-            <button className="brutalist-button-inverted flex items-center justify-center gap-2 mx-auto text-xs md:text-base">
+            <a
+              href="curriculum/Curriculum_Francesco_Gancitano.pdf"
+              download="Curriculum_Francesco_Gancitano.pdf"
+              className="brutalist-button-inverted inline-flex items-center justify-center gap-2 mx-auto text-xs md:text-base cursor-pointer"
+            >
               <Download size={20} />
               SCARICA CV
-            </button>
+            </a>
           </motion.div>
         </div>
       </section>
