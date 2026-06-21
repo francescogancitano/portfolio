@@ -552,7 +552,7 @@ export default function Home() {
                   <img
                     src={cert.image}
                     alt={cert.title}
-                    className="w-full h-32 md:h-40 object-cover border-2 border-black mb-4 group-hover:border-white"
+                    className="w-full h-32 md:h-40 object-cover object-top border-2 border-black mb-4 group-hover:border-white"
                   />
                 ) : (
                   <div className={`w-full h-32 md:h-40 border-2 border-black mb-4 flex flex-col justify-between p-3 font-mono text-black group-hover:border-white select-none ${
