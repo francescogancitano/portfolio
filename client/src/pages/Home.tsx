@@ -46,8 +46,10 @@ const experiences: Experience[] = [
     period: 'dec 2025 - giu 2026',
     description: 'La mia scuola ogni anno partecipa alla gara di robotica Nao Challenge, dove ci danno un obiettivo da raggiungere e da presentare, e un hackaton con una sfida data sul momento. Quest\'anno la sfida era sul teatro e sono riuscito a portare la mia squadra al secondo posto nella categoria "Super Team".',
     images: [
-      'https://d2xsxph8kpxj0f.cloudfront.net/310519663504546332/RyNMHP2DGyk5PzudxuDgU4/hero-aurora-background-WxyLYNTF48KY6KrnPrpkdr.webp',
-      'https://d2xsxph8kpxj0f.cloudfront.net/310519663504546332/RyNMHP2DGyk5PzudxuDgU4/abstract-aurora-pattern-5Vgh3D9N6R2XXB8VdAowrg.webp',
+      '/experiences/naoChallenge/foto_team.jpg',
+      '/experiences/naoChallenge/foto_di_gruppo.jpg',
+      '/experiences/naoChallenge/foto_a_lavoro.jpg',
+      '/experiences/naoChallenge/classifica.jpg'
     ],
     link: 'https://www.facebook.com/IisVeronaTrento/posts/il-team-etabeta-delliis-verona-trento-alla-nao-challenge-2026gli-studenti-del-te/1679728970404957/',
     linkLabel: 'Vedi il post su Facebook'
@@ -59,8 +61,8 @@ const experiences: Experience[] = [
     period: '24 ott 2025',
     description: 'Ho voluto fare da relatore al Linux Day del Verona Trento, una giornata dedicata al software libero. Ho voluto parlare di un tema molto più delicato, ovvero la dipendenza dall\'intelligenza artificiale, un problema di cui nessuno parla ma che tutti quanti conoscono, facendo riferimento anche a uno studio del MIT che spiega le attività cerebrali delle persone durante l\'utilizzo dell\'AI.',
     images: [
-      'https://d2xsxph8kpxj0f.cloudfront.net/310519663504546332/RyNMHP2DGyk5PzudxuDgU4/abstract-aurora-pattern-5Vgh3D9N6R2XXB8VdAowrg.webp',
-      'https://d2xsxph8kpxj0f.cloudfront.net/310519663504546332/RyNMHP2DGyk5PzudxuDgU4/hero-aurora-background-WxyLYNTF48KY6KrnPrpkdr.webp',
+      '/experiences/linuxDay/f029be05.jpg',
+      '/experiences/linuxDay/img_wa0019.jpg'
     ],
     link: 'https://www.instagram.com/p/DQJVJ0-jbWC/',
     linkLabel: 'Vedi il post su Instagram'
@@ -71,7 +73,10 @@ const experiences: Experience[] = [
     company: 'GDG Nebrodi',
     period: 'dec 2025',
     description: 'In questa sfida proposta dal gruppo di sviluppatori Google (i GDG Nebrodi), l\'obiettivo era presentare un\'idea innovativa per salvaguardare l\'ambiente delle montagne dei Nebrodi. Io e i miei compagni abbiamo pensato a un\'applicazione da poter utilizzare per la tutela dell\'ambiente, con mappe offline in caso di smarrimento e altro. Siamo arrivati al quarto posto.',
-    images: [],
+    images: [
+      '/experiences/GDG/dsc03751.jpg',
+      '/experiences/GDG/dsc03756.jpg'
+    ],
     link: 'https://gdg.community.dev/events/details/google-gdg-nebrodi-presents-devfest-mediterranean-2025-1/',
     linkLabel: 'Scopri i dettagli del DevFest'
   }
