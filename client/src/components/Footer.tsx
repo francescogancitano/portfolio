@@ -9,6 +9,17 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   const [modalContent, setModalContent] = useState<'privacy' | 'terms' | null>(null);
 
+  const scrollToSection = (id: string) => {
+    if (id === '#') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const element = document.querySelector(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <footer className="bg-black text-white border-t-4 border-white relative">
       <div className="container mx-auto px-4 py-8 md:py-12">
@@ -31,24 +42,36 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 font-mono text-xs md:text-sm">
               <li>
-                <Link href="/" className="hover:bg-white hover:text-black px-2 py-1 transition-all duration-150 inline-block">
+                <button
+                  onClick={() => scrollToSection('#')}
+                  className="hover:bg-white hover:text-black px-2 py-1 transition-all duration-150 inline-block cursor-pointer text-left"
+                >
                   → HOME
-                </Link>
+                </button>
               </li>
               <li>
-                <Link href="/about" className="hover:bg-white hover:text-black px-2 py-1 transition-all duration-150 inline-block">
+                <button
+                  onClick={() => scrollToSection('#about')}
+                  className="hover:bg-white hover:text-black px-2 py-1 transition-all duration-150 inline-block cursor-pointer text-left"
+                >
                   → CHI SONO
-                </Link>
+                </button>
               </li>
               <li>
-                <Link href="/experiences" className="hover:bg-white hover:text-black px-2 py-1 transition-all duration-150 inline-block">
+                <button
+                  onClick={() => scrollToSection('#experiences')}
+                  className="hover:bg-white hover:text-black px-2 py-1 transition-all duration-150 inline-block cursor-pointer text-left"
+                >
                   → ESPERIENZE
-                </Link>
+                </button>
               </li>
               <li>
-                <Link href="/certificates" className="hover:bg-white hover:text-black px-2 py-1 transition-all duration-150 inline-block">
+                <button
+                  onClick={() => scrollToSection('#certificates')}
+                  className="hover:bg-white hover:text-black px-2 py-1 transition-all duration-150 inline-block cursor-pointer text-left"
+                >
                   → CERTIFICATI
-                </Link>
+                </button>
               </li>
             </ul>
           </div>
@@ -70,9 +93,12 @@ export default function Footer() {
                 </a>
               </div>
               <div>
-                <Link href="/contact" className="hover:bg-white hover:text-black px-2 py-1 transition-all duration-150 inline-block">
+                <button
+                  onClick={() => scrollToSection('#contact')}
+                  className="hover:bg-white hover:text-black px-2 py-1 transition-all duration-150 inline-block cursor-pointer text-left"
+                >
                   PRENOTA CONSULENZA
-                </Link>
+                </button>
               </div>
             </div>
           </div>
