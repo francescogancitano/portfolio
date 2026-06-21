@@ -525,7 +525,7 @@ export default function Home() {
                   <>
                     <div className="border-4 border-black aspect-video bg-gray-100 flex items-center justify-center overflow-hidden">
                       <motion.img
-                        key={currentImageIdx}
+                        key={`${selectedExp}-${currentImageIdx}`}
                         src={currentImage}
                         alt="Experience"
                         className="w-full h-full object-cover"
