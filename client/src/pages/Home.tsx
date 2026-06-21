@@ -401,7 +401,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 4: ESPERIENZE */}
-      <section className="border-b-4 border-black py-12 md:py-20 bg-gradient-to-r from-green-50 via-teal-50 to-cyan-50">
+      <section id="experiences" className="border-b-4 border-black py-12 md:py-20 bg-gradient-to-r from-green-50 via-teal-50 to-cyan-50">
         <div className="container mx-auto px-4">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -522,7 +522,7 @@ export default function Home() {
       </section>
 
       {/* SECTION 5: CERTIFICATI */}
-      <section className="border-b-4 border-black py-12 md:py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+      <section id="certificates" className="border-b-4 border-black py-12 md:py-20 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
         <div className="container mx-auto px-4">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
