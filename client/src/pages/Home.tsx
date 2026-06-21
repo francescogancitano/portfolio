@@ -46,10 +46,10 @@ const experiences: Experience[] = [
     period: 'dec 2025 - giu 2026',
     description: 'La mia scuola ogni anno partecipa alla gara di robotica Nao Challenge, dove ci danno un obiettivo da raggiungere e da presentare, e un hackaton con una sfida data sul momento. Quest\'anno la sfida era sul teatro e sono riuscito a portare la mia squadra al secondo posto nella categoria "Super Team".',
     images: [
-      '/experiences/naoChallenge/foto_team.jpg',
-      '/experiences/naoChallenge/foto_di_gruppo.jpg',
-      '/experiences/naoChallenge/foto_a_lavoro.jpg',
-      '/experiences/naoChallenge/classifica.jpg'
+      'experiences/naoChallenge/foto_team.jpg',
+      'experiences/naoChallenge/foto_di_gruppo.jpg',
+      'experiences/naoChallenge/foto_a_lavoro.jpg',
+      'experiences/naoChallenge/classifica.jpg'
     ],
     link: 'https://www.facebook.com/IisVeronaTrento/posts/il-team-etabeta-delliis-verona-trento-alla-nao-challenge-2026gli-studenti-del-te/1679728970404957/',
     linkLabel: 'Vedi il post su Facebook'
@@ -61,8 +61,8 @@ const experiences: Experience[] = [
     period: '24 ott 2025',
     description: 'Ho voluto fare da relatore al Linux Day del Verona Trento, una giornata dedicata al software libero. Ho voluto parlare di un tema molto più delicato, ovvero la dipendenza dall\'intelligenza artificiale, un problema di cui nessuno parla ma che tutti quanti conoscono, facendo riferimento anche a uno studio del MIT che spiega le attività cerebrali delle persone durante l\'utilizzo dell\'AI.',
     images: [
-      '/experiences/linuxDay/f029be05.jpg',
-      '/experiences/linuxDay/img_wa0019.jpg'
+      'experiences/linuxDay/f029be05.jpg',
+      'experiences/linuxDay/img_wa0019.jpg'
     ],
     link: 'https://www.instagram.com/p/DQJVJ0-jbWC/',
     linkLabel: 'Vedi il post su Instagram'
@@ -74,8 +74,8 @@ const experiences: Experience[] = [
     period: 'dec 2025',
     description: 'In questa sfida proposta dal gruppo di sviluppatori Google (i GDG Nebrodi), l\'obiettivo era presentare un\'idea innovativa per salvaguardare l\'ambiente delle montagne dei Nebrodi. Io e i miei compagni abbiamo pensato a un\'applicazione da poter utilizzare per la tutela dell\'ambiente, con mappe offline in caso di smarrimento e altro. Siamo arrivati al quarto posto.',
     images: [
-      '/experiences/GDG/dsc03751.jpg',
-      '/experiences/GDG/dsc03756.jpg'
+      'experiences/GDG/dsc03751.jpg',
+      'experiences/GDG/dsc03756.jpg'
     ],
     link: 'https://gdg.community.dev/events/details/google-gdg-nebrodi-presents-devfest-mediterranean-2025-1/',
     linkLabel: 'Scopri i dettagli del DevFest'
@@ -88,8 +88,8 @@ const certificates: Certificate[] = [
     title: 'Attestato Progetto Erasmus+',
     issuer: 'Unione Europea / IIS Verona Trento',
     date: '16 apr 2026',
-    file: '/attestati/attestato_progetto_Erasmus.jpg',
-    image: '/attestati/attestato_progetto_Erasmus.jpg',
+    file: 'attestati/attestato_progetto_Erasmus.jpg',
+    image: 'attestati/attestato_progetto_Erasmus.jpg',
     isPdf: false,
     description: 'Certificato di partecipazione al progetto di mobilità europea Erasmus+, focalizzato sullo sviluppo di competenze linguistiche, relazionali e professionali in contesti interculturali.'
   },
@@ -98,8 +98,8 @@ const certificates: Certificate[] = [
     title: 'Workshop avanzato di Flutter',
     issuer: 'IIS Verona Trento',
     date: '17 gen 2026',
-    file: '/attestati/Attestato_Flutter_Gancitano_copia.pdf',
-    image: '/attestati/Attestato_Flutter_Gancitano_copia.jpg',
+    file: 'attestati/Attestato_Flutter_Gancitano_copia.pdf',
+    image: 'attestati/Attestato_Flutter_Gancitano_copia.jpg',
     isPdf: true,
     description: 'Certificato rilasciato dall\'Istituto per aver partecipato al workshop interattivo di Flutter imparando anche strumenti come Firebase.'
   },
@@ -108,8 +108,8 @@ const certificates: Certificate[] = [
     title: 'Introduction to Cybersecurity',
     issuer: 'Cisco Networking Academy',
     date: '19 mar 2026',
-    file: '/attestati/Introduction_to_Cybersecurity_certificate_francesco-gancitano-veronatrento-it_85404c84-14bd-436b-8a72-b60cc245be4e.pdf',
-    image: '/attestati/Introduction_to_Cybersecurity.jpg',
+    file: 'attestati/Introduction_to_Cybersecurity_certificate_francesco-gancitano-veronatrento-it_85404c84-14bd-436b-8a72-b60cc245be4e.pdf',
+    image: 'attestati/Introduction_to_Cybersecurity.jpg',
     isPdf: true,
     description: 'Certificazione Cisco sulle conoscenze basilari di sicurezza informatica e cryptografia'
   },
@@ -118,8 +118,8 @@ const certificates: Certificate[] = [
     title: 'IT Essentials',
     issuer: 'Cisco Networking Academy',
     date: '6 giu 2025',
-    file: '/attestati/_certificate_francesco-gancitano-veronatrento-it_a0801585-f9e8-4084-ad42-36163b7f61f2.pdf',
-    image: '/attestati/Cybersecurity_Essentials.jpg',
+    file: 'attestati/_certificate_francesco-gancitano-veronatrento-it_a0801585-f9e8-4084-ad42-36163b7f61f2.pdf',
+    image: 'attestati/Cybersecurity_Essentials.jpg',
     isPdf: true,
     description: 'Certificato Cisco sulle competenze base dell\'IT, computer, come funzionano, Sistemi operativi, e NetWorking'
   },
@@ -128,8 +128,8 @@ const certificates: Certificate[] = [
     title: 'Certificato IBM SkillsBuild',
     issuer: 'IBM',
     date: '29 ott 2025',
-    file: '/attestati/Certificato di completamento _ SkillsBuild.pdf',
-    image: '/attestati/Certificato_IBM_SkillsBuild.jpg',
+    file: 'attestati/Certificato di completamento _ SkillsBuild.pdf',
+    image: 'attestati/Certificato_IBM_SkillsBuild.jpg',
     isPdf: true,
     description: 'Attestato per aver terminato con successo moduli di formazione professionalizzante sull\'AI da IBM.'
   },
@@ -138,8 +138,8 @@ const certificates: Certificate[] = [
     title: 'Relatore Linux Day 2025',
     issuer: 'IIS Verona Trento / LUG',
     date: '2 apr 2026',
-    file: '/attestati/attestato di partecipazione linux day.png',
-    image: '/attestati/attestato di partecipazione linux day.png',
+    file: 'attestati/attestato di partecipazione linux day.png',
+    image: 'attestati/attestato di partecipazione linux day.png',
     isPdf: false,
     description: 'Certificato di partecipazione in veste di relatore alle conferenze del Linux Day 2025, in cui ho tenuto un talk riguardante gli impatti cerebrali dell\'abuso di intelligenza artificiale.'
   },
@@ -148,8 +148,8 @@ const certificates: Certificate[] = [
     title: 'Apprendisti Ciceroni FAI',
     issuer: 'FAI (Fondo per l\'Ambiente Italiano)',
     date: '2 apr 2026',
-    file: '/attestati/attestato FAI Francesco Gancitano.pdf',
-    image: '/attestati/attestato_FAI_Francesco_Gancitano.jpg',
+    file: 'attestati/attestato FAI Francesco Gancitano.pdf',
+    image: 'attestati/attestato_FAI_Francesco_Gancitano.jpg',
     isPdf: true,
     description: 'Attestato per aver partecipato attivamente in qualità di guida studentesca (Cicerone) per illustrare ad un pubblico reale le bellezze artistiche e monumentali tutelate dal FAI.'
   },
@@ -158,8 +158,8 @@ const certificates: Certificate[] = [
     title: 'Attestato PON Orientamento',
     issuer: 'IIS Verona Trento',
     date: '9 mar 2026',
-    file: '/attestati/attestato pon orientamento.jpg',
-    image: '/attestati/attestato pon orientamento.jpg',
+    file: 'attestati/attestato pon orientamento.jpg',
+    image: 'attestati/attestato pon orientamento.jpg',
     isPdf: false,
     description: 'Attestato scolastico per lo sviluppo di competenze trasversali e orientamento formativo/professionale finalizzato all\'analisi delle scelte lavorative future.'
   },
@@ -168,8 +168,8 @@ const certificates: Certificate[] = [
     title: 'Sud Innovation Summit',
     issuer: 'Sud Innovation',
     date: '16/17 ott 2025',
-    file: '/attestati/sud innovation summit.pdf',
-    image: '/attestati/sud_innovation_summit.jpg',
+    file: 'attestati/sud innovation summit.pdf',
+    image: 'attestati/sud_innovation_summit.jpg',
     isPdf: true,
     description: 'Certificato di presenza al più importante summit sull\'innovazione e startup del Sud Italia, incentrato sulle tendenze future della digital transformation.'
   },
@@ -178,8 +178,8 @@ const certificates: Certificate[] = [
     title: 'Attestato Mediterranean DevFest ',
     issuer: 'GDG Nebrodi',
     date: '14 dec 2025',
-    file: '/attestati/Attestato_gancitano_francesco.pdf',
-    image: '/attestati/Attestato_gancitano_francesco.jpg',
+    file: 'attestati/Attestato_gancitano_francesco.pdf',
+    image: 'attestati/Attestato_gancitano_francesco.jpg',
     isPdf: true,
     description: 'Attestato di partecipazione alla competizione fra studendi del Mediterranean DevFest a Sant\'Agata di Militello.'
   }
@@ -413,7 +413,7 @@ export default function Home() {
             >
               <div className="brutalist-card p-0 overflow-hidden aspect-square">
                 <img 
-                  src="/avatar.jpg" 
+                  src="avatar.jpg" 
                   alt="Developer Avatar" 
                   className="w-full h-full object-cover"
                 />
